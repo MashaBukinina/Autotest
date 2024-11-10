@@ -2,8 +2,8 @@ describe('Покупка нового аватара', function () {
 
     it('Покупка', function () {
          cy.visit('https://pokemonbattle.ru/login');
-         cy.get(':nth-child(1) > .auth__input').type('masha.bukinina@yandex.ru');
-         cy.get('#password').type('Masha68381391');
+         cy.get(':nth-child(1) > .auth__input').type('USER_LOGIN');
+         cy.get('#password').type('USER_PASSWORD');
          cy.get('.auth__button').click();
          cy.get('.header__container > .header__id').click();
          cy.get('[href="/shop"]').click();
@@ -17,7 +17,7 @@ describe('Покупка нового аватара', function () {
          cy.get('.payment__submit-button').click();
          cy.get('.payment__padding').contains('Покупка прошла успешно');
          cy.contains('Покупка прошла успешно').should('be.visible');
-
+         
     })
 
     
